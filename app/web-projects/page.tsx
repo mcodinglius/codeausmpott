@@ -1,4 +1,5 @@
-﻿import Link from "next/link";
+import Image from "next/image";
+import Link from "next/link";
 import {
     ArrowLeft,
     Braces,
@@ -41,9 +42,15 @@ export default function WebprojektePage() {
         <main className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-300">
             <header className="border-b border-[var(--color-border)] bg-[var(--color-bg)]">
                 <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
-                    <Link href="/" className="flex items-center gap-2 font-semibold">
-                        <div className="flex size-9 items-center justify-center rounded-lg bg-[var(--color-primary)] text-white">
-                            <Terminal className="size-4" />
+                    <Link href="/" className="flex items-center gap-3 font-semibold">
+                        <div className="flex size-11 items-center justify-center overflow-hidden rounded-lg sm:size-14">
+                            <Image
+                                src="/codewithMiguelLogo.png"
+                                alt="CodeWithMiguel Logo"
+                                width={48}
+                                height={48}
+                                className="h-full w-full object-cover"
+                            />
                         </div>
                         <span className="text-[var(--color-text)]">CodeWithMiguel</span>
                     </Link>

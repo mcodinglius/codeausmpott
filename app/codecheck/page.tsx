@@ -1,5 +1,6 @@
-﻿import Link from "next/link";
-import { ArrowLeft, Terminal } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {CodeCheck} from "@/components/code-check";
 
@@ -8,13 +9,19 @@ export default function CodeCheckPage() {
         <main className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)]">
             <header className="border-b border-[var(--color-border)] bg-[var(--color-bg)]/90 backdrop-blur-xl">
                 <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-                    <Link href="/" className="flex items-center gap-3">
-                        <div className="grid size-10 place-items-center rounded-xl bg-[var(--color-base-dark)] text-white">
-                            <Terminal className="size-5" />
+                    <Link href="/" className="flex items-center gap-3 font-semibold">
+                        <div className="flex size-11 items-center justify-center overflow-hidden rounded-lg sm:size-14">
+                            <Image
+                                src="/codewithMiguelLogo.png"
+                                alt="CodeWithMiguel Logo"
+                                width={48}
+                                height={48}
+                                className="h-full w-full object-cover"
+                            />
                         </div>
 
                         <div>
-                            <div className="font-bold tracking-tight">CodeWithMiguel</div>
+                            <div className="font-bold tracking-tight text-[var(--color-text)]">CodeWithMiguel</div>
                             <div className="text-xs text-[var(--color-text-soft)]">
                                 Informatik & Webprojekte
                             </div>

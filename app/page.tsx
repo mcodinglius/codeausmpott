@@ -93,16 +93,19 @@ export default function Home() {
         {/* Navigation */}
         <header className="border-b border-[var(--color-border)] bg-[var(--color-bg)]/90 backdrop-blur">
           <div className="flex w-full items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-10">
-            <Link href="/" className="flex shrink-0 items-center gap-2 font-semibold">
+            <Link href="/" className="flex shrink-0 items-center gap-3 font-semibold">
               <div className="flex size-12 items-center justify-center overflow-hidden rounded-lg sm:size-16">
                 <Image
                   src="/codewithMiguelLogo.png"
-                  alt="Informatik Nachhilfe Logo"
+                  alt="CodeWithMiguel Logo"
                   width={36}
                   height={36}
                   className="h-full w-full object-cover"
                 />
               </div>
+              <span className="text-base font-bold tracking-tight text-[var(--color-text)] sm:text-lg">
+                CodeWithMiguel
+              </span>
             </Link>
 
             <div className="ml-auto flex items-center gap-3">
