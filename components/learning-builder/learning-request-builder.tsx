@@ -168,7 +168,7 @@ export function LearningRequestBuilder() {
         setMessage("");
 
         try {
-            const response = await fetch("/api/anfrage", {
+            const response = await fetch("/api/resend-test", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -177,6 +177,12 @@ export function LearningRequestBuilder() {
             });
 
             const result = await response.json().catch(() => null);
+
+            console.log("API RESPONSE", {
+                status: response.status,
+                ok: response.ok,
+                result,
+            });
 
             if (!response.ok) {
                 throw new Error(
