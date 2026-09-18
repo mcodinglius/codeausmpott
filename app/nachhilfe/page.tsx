@@ -1,4 +1,5 @@
-﻿import Link from "next/link";
+﻿import Image from "next/image";
+import Link from "next/link";
 import {
     ArrowLeft,
     ArrowRight,
@@ -30,12 +31,18 @@ export default function AnfragePage() {
             {/* Navigation */}
             <header className="border-b border-[var(--color-border)]/80">
                 <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
-                    <Link href="/" className="flex items-center gap-2 font-semibold">
-                        <div className="flex size-9 items-center justify-center rounded-lg bg-zinc-950 text-white">
-                            <Terminal className="size-4" />
+                    <Link href="/" className="flex items-center gap-3 font-semibold">
+                        <div className="flex size-11 items-center justify-center overflow-hidden rounded-lg sm:size-14">
+                            <Image
+                                src="/codewithMiguelLogo.png"
+                                alt="CodeWithMiguel Logo"
+                                width={48}
+                                height={48}
+                                className="h-full w-full object-cover"
+                            />
                         </div>
 
-                        <span>Informatik Nachhilfe</span>
+                        <span>CodeWithMiguel</span>
                     </Link>
 
                     <Link
