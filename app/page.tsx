@@ -9,7 +9,7 @@ import {
   GitBranch,
   Globe2,
   GraduationCap,
-  Network,
+  Network, ScanLine,
   Terminal,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -142,6 +142,51 @@ export default function Home() {
             </Link>
           </div>
         </header>
+        <Link
+            href="/codecheck"
+            className="group mx-auto mt-5 block max-w-5xl px-6 lg:px-8"
+        >
+          <div className="codecheck-teaser relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-5 py-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:px-6">
+            {/* animierter Scan */}
+            <div className="codecheck-teaser-scan pointer-events-none absolute inset-y-0 w-24 opacity-40" />
+
+            <div className="relative z-10 flex items-center gap-4">
+              {/* Icon */}
+              <div className="codecheck-teaser-icon grid size-12 shrink-0 place-items-center rounded-xl text-white shadow-lg">
+                <ScanLine className="size-6" />
+              </div>
+
+              {/* Text */}
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center gap-2">
+          <span className="font-semibold text-[var(--color-text)]">
+            Nicht sicher, wo dein Problem liegt?
+          </span>
+
+                  <span className="hidden rounded-full bg-[var(--color-accent-pink)]/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent-pink)] sm:inline">
+            Neu
+          </span>
+                </div>
+
+                <p className="mt-1 text-sm text-[var(--color-text-soft)]">
+                  Starte den CodeCheck und finde in wenigen Sekunden den richtigen
+                  Einstieg.
+                </p>
+              </div>
+
+              {/* CTA */}
+              <div className="flex shrink-0 items-center gap-2 font-semibold text-[var(--color-text)]">
+        <span className="hidden sm:inline">
+          CodeCheck
+        </span>
+
+                <div className="grid size-9 place-items-center rounded-full bg-[var(--color-surface)] transition group-hover:translate-x-1 group-hover:bg-[var(--color-accent-orange)] group-hover:text-white">
+                  <ArrowRight className="size-4" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </Link>
 
         {/* Hero */}
         <section className="relative overflow-hidden">
