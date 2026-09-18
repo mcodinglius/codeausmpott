@@ -91,46 +91,50 @@ export default function Home() {
   return (
       <main className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)]">
         {/* Navigation */}
-        <header className="border-b border-[var(--color-border)] bg-[var(--color-bg)]/90 backdrop-blur">  
-          <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
-            <Link href="/" className="flex items-center gap-2 font-semibold">
-              <div className="flex size-16 items-center justify-center overflow-hidden rounded-lg">
-                <Image
-                  src="/codewithMiguelLogo.png"
-                  alt="Informatik Nachhilfe Logo"
-                  width={36}
-                  height={36}
-                  className="h-full w-full object-cover"
-                />
+        <header className="border-b border-[var(--color-border)] bg-[var(--color-bg)]/90 backdrop-blur">
+          <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between gap-3">
+              <Link href="/" className="flex items-center gap-2 font-semibold">
+                <div className="flex size-12 items-center justify-center overflow-hidden rounded-lg sm:size-16">
+                  <Image
+                    src="/codewithMiguelLogo.png"
+                    alt="Informatik Nachhilfe Logo"
+                    width={36}
+                    height={36}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </Link>
+
+              <div className="ml-auto flex items-center gap-3">
+                <ThemeToggle />
               </div>
-            </Link>
+            </div>
 
-            <nav className="hidden items-center gap-8 text-sm text-[var(--color-text-soft)] md:flex">
-              <Link href="#themen" className="transition hover:text-[var(--color-primary)]">
-                Themen
-              </Link>
-              <Link href="#ablauf" className="transition hover:text-[var(--color-primary)]">
-                Ablauf
-              </Link>
-              <Link href="#ueber-mich" className="transition hover:text-[var(--color-primary)]">
-                Über mich
-              </Link>
-            </nav>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <nav className="hidden items-center gap-8 text-sm text-[var(--color-text-soft)] md:flex">
+                <Link href="#themen" className="transition hover:text-[var(--color-primary)]">
+                  Themen
+                </Link>
+                <Link href="#ablauf" className="transition hover:text-[var(--color-primary)]">
+                  Ablauf
+                </Link>
+                <Link href="#ueber-mich" className="transition hover:text-[var(--color-primary)]">
+                  Über mich
+                </Link>
+              </nav>
 
-            <div className="flex items-center gap-3">
-              <ThemeToggle />
-
-              <div className="flex flex-wrap gap-3">
+              <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:justify-end">
                 <Link
-                    href="/anfrage"
-                    className="rounded-xl bg-[var(--color-accent-orange)] px-5 py-3 font-medium text-white"
+                  href="/anfrage"
+                  className="inline-flex items-center justify-center rounded-xl bg-[var(--color-accent-orange)] px-4 py-3 text-sm font-medium text-white sm:px-5"
                 >
                   Informatik-Nachhilfe
                 </Link>
 
                 <Link
-                    href="/web-projects"
-                    className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-5 py-3 font-medium text-[var(--color-text)]"
+                  href="/web-projects"
+                  className="inline-flex items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-4 py-3 text-sm font-medium text-[var(--color-text)] sm:px-5"
                 >
                   Hilfe beim Webprojekt
                 </Link>
