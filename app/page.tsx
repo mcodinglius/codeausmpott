@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -93,12 +94,15 @@ export default function Home() {
         <header className="border-b border-[var(--color-border)] bg-[var(--color-bg)]/90 backdrop-blur">  
           <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
             <Link href="/" className="flex items-center gap-2 font-semibold">
-              <div className="flex size-9 items-center justify-center rounded-lg bg-[var(--color-primary)] text-white">
-                <Terminal className="size-4" />
+              <div className="flex size-16 items-center justify-center overflow-hidden rounded-lg">
+                <Image
+                  src="/codewithMiguelLogo.png"
+                  alt="Informatik Nachhilfe Logo"
+                  width={36}
+                  height={36}
+                  className="h-full w-full object-cover"
+                />
               </div>
-              <span className="text-[var(--color-base-dark)]">
-              Informatik Nachhilfe
-            </span>
             </Link>
 
             <nav className="hidden items-center gap-8 text-sm text-[var(--color-text-soft)] md:flex">
