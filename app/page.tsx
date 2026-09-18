@@ -120,12 +120,21 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <ThemeToggle />
 
-              <Link
-                  href="/anfrage"
-                  className="inline-flex h-10 items-center justify-center rounded-xl bg-[var(--color-accent-orange)] px-4 text-sm font-medium text-white transition hover:bg-[var(--color-accent-pink)]"
-              >
-                Lernanfrage
-              </Link>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                    href="/anfrage"
+                    className="rounded-xl bg-[var(--color-accent-orange)] px-5 py-3 font-medium text-white"
+                >
+                  Informatik-Nachhilfe
+                </Link>
+
+                <Link
+                    href="/web-projects"
+                    className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-5 py-3 font-medium text-[var(--color-text)]"
+                >
+                  Hilfe beim Webprojekt
+                </Link>
+              </div>
             </div>
           </div>
         </header>
