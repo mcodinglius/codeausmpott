@@ -115,7 +115,16 @@ export default function Home() {
                 >
                   Informatik-Nachhilfe
                 </Link>
+                <Link
+                    href="/kurse"
+                    className="group flex items-center gap-2 text-sm font-medium text-[var(--color-text-soft)] transition hover:text-[var(--color-text)]"
+                >
+                  Kurse
 
+                  <span className="rounded-full bg-[var(--color-accent-orange)]/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent-orange)]">
+      Neu
+    </span>
+                </Link>
                 <Link
                   href="/web-projects"
                   className="inline-flex items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-5 py-3 text-sm font-medium text-[var(--color-text)]"
