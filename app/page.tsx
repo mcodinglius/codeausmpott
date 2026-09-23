@@ -92,15 +92,19 @@ export default function Home() {
       <main className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)]">
         {/* Navigation */}
         <header className="border-b border-[var(--color-border)] bg-[var(--color-bg)]/90 backdrop-blur">
+          {/* obere Zeile */}
           <div className="flex w-full items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-10">
-            <Link href="/" className="flex shrink-0 items-center gap-3 font-semibold">
+            <Link
+                href="/"
+                className="flex shrink-0 items-center gap-3 font-semibold"
+            >
               <div className="flex size-12 items-center justify-center overflow-hidden rounded-lg sm:size-16">
                 <Image
-                  src="/favicon.ico"
-                  alt="CodeWithMiguel Logo"
-                  width={40}
-                  height={40}
-                  className="h-full w-full object-cover"
+                    src="/favicon.ico"
+                    alt="CodeWithMiguel Logo"
+                    width={64}
+                    height={64}
+                    className="h-full w-full object-contain"
                 />
               </div>
             </Link>
@@ -108,26 +112,29 @@ export default function Home() {
             <div className="ml-auto flex items-center gap-3">
               <ThemeToggle />
 
+              {/* Desktop Navigation */}
               <div className="hidden items-center gap-3 md:flex">
                 <Link
-                  href="/anfrage"
-                  className="inline-flex items-center justify-center rounded-xl bg-[var(--color-accent-orange)] px-5 py-3 text-sm font-medium text-white"
+                    href="/anfrage"
+                    className="inline-flex items-center justify-center rounded-xl bg-[var(--color-accent-orange)] px-5 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5"
                 >
                   Informatik-Nachhilfe
                 </Link>
+
                 <Link
                     href="/kurse"
-                    className="group flex items-center gap-2 text-sm font-medium text-[var(--color-text-soft)] transition hover:text-[var(--color-text)]"
+                    className="group inline-flex items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-4 py-3 text-sm font-medium text-[var(--color-text)] transition hover:-translate-y-0.5"
                 >
                   Kurse
 
                   <span className="rounded-full bg-[var(--color-accent-orange)]/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent-orange)]">
-      Neu
-    </span>
+            Neu
+          </span>
                 </Link>
+
                 <Link
-                  href="/web-projects"
-                  className="inline-flex items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-5 py-3 text-sm font-medium text-[var(--color-text)]"
+                    href="/web-projects"
+                    className="inline-flex items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-5 py-3 text-sm font-medium text-[var(--color-text)] transition hover:-translate-y-0.5"
                 >
                   Hilfe beim Webprojekt
                 </Link>
@@ -135,63 +142,71 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-3 px-4 pb-3 sm:px-6 md:hidden">
+          {/* Mobile Navigation */}
+          <div className="grid gap-2 px-4 pb-4 sm:px-6 md:hidden">
             <Link
-              href="/anfrage"
-              className="inline-flex items-center justify-center rounded-xl bg-[var(--color-accent-orange)] px-4 py-3 text-sm font-medium text-white"
+                href="/anfrage"
+                className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[var(--color-accent-orange)] px-4 py-3 text-center text-sm font-semibold text-white"
             >
               Informatik-Nachhilfe
             </Link>
 
             <Link
-              href="/web-projects"
-              className="inline-flex items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-4 py-3 text-sm font-medium text-[var(--color-text)]"
+                href="/kurse"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[var(--color-accent-pink)]/30 bg-[var(--color-accent-pink)]/5 px-4 py-3 text-center text-sm font-semibold text-[var(--color-text)]"
+            >
+              Kurse
+
+              <span className="rounded-full bg-[var(--color-accent-orange)]/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent-orange)]">
+        Neu
+      </span>
+            </Link>
+
+            <Link
+                href="/web-projects"
+                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-4 py-3 text-center text-sm font-semibold text-[var(--color-text)]"
             >
               Hilfe beim Webprojekt
             </Link>
           </div>
         </header>
+
+        {/* CodeCheck direkt unter dem Header */}
         <Link
             href="/codecheck"
-            className="group mx-auto mt-5 block max-w-5xl px-6 lg:px-8"
+            className="group mx-auto mt-4 block max-w-5xl px-4 sm:px-6 lg:px-8"
         >
-          <div className="codecheck-teaser relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-5 py-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:px-6">
-            {/* animierter Scan */}
+          <div className="codecheck-teaser relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-4 py-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:px-6">
+            {/* Scan Animation */}
             <div className="codecheck-teaser-scan pointer-events-none absolute inset-y-0 w-24 opacity-40" />
 
-            <div className="relative z-10 flex items-center gap-4">
+            <div className="relative z-10 flex items-center gap-3 sm:gap-4">
               {/* Icon */}
-              <div className="codecheck-teaser-icon grid size-12 shrink-0 place-items-center rounded-xl text-white shadow-lg">
-                <ScanLine className="size-6" />
+              <div className="codecheck-teaser-icon grid size-11 shrink-0 place-items-center rounded-xl text-white shadow-lg sm:size-12">
+                <ScanLine className="size-5 sm:size-6" />
               </div>
 
               {/* Text */}
               <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-2">
-          <span className="font-semibold text-[var(--color-text)]">
-            Nicht sicher, wo dein Problem liegt?
+                <div className="flex flex-wrap items-center gap-2">
+          <span className="text-sm font-semibold text-[var(--color-text)] sm:text-base">
+            Keine Ahnung, wo der Fehler steckt?
           </span>
 
-                  <span className="hidden rounded-full bg-[var(--color-accent-pink)]/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent-pink)] sm:inline">
-            Neu
+                  <span className="rounded-full bg-[var(--color-accent-pink)]/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[var(--color-accent-pink)] sm:text-[10px]">
+            CodeCheck
           </span>
                 </div>
 
-                <p className="mt-1 text-sm text-[var(--color-text-soft)]">
-                  Starte den CodeCheck und finde in wenigen Sekunden den richtigen
-                  Einstieg.
+                <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--color-text-soft)] sm:text-sm">
+                  Finde in wenigen Sekunden heraus, ob dein Problem eher bei Code,
+                  Layout, Deployment oder einem Lernthema liegt.
                 </p>
               </div>
 
-              {/* CTA */}
-              <div className="flex shrink-0 items-center gap-2 font-semibold text-[var(--color-text)]">
-        <span className="hidden sm:inline">
-          CodeCheck
-        </span>
-
-                <div className="grid size-9 place-items-center rounded-full bg-[var(--color-surface)] transition group-hover:translate-x-1 group-hover:bg-[var(--color-accent-orange)] group-hover:text-white">
-                  <ArrowRight className="size-4" />
-                </div>
+              {/* Pfeil */}
+              <div className="grid size-9 shrink-0 place-items-center rounded-full bg-[var(--color-surface)] transition group-hover:translate-x-1 group-hover:bg-[var(--color-accent-orange)] group-hover:text-white">
+                <ArrowRight className="size-4" />
               </div>
             </div>
           </div>
