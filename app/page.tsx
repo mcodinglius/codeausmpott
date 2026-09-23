@@ -3,12 +3,12 @@ import Link from "next/link";
 import {
   ArrowRight,
   BookOpen,
-  Braces,
+  Braces, Brain,
   Code2,
   Database,
   GitBranch,
   Globe2,
-  GraduationCap,
+  GraduationCap, MessageSquare,
   Network, ScanLine,
   Terminal,
 } from "lucide-react";
@@ -96,16 +96,13 @@ export default function Home() {
             <Link href="/" className="flex shrink-0 items-center gap-3 font-semibold">
               <div className="flex size-12 items-center justify-center overflow-hidden rounded-lg sm:size-16">
                 <Image
-                  src="/codewithMiguelLogo.png"
+                  src="/favicon.ico"
                   alt="CodeWithMiguel Logo"
-                  width={36}
-                  height={36}
+                  width={40}
+                  height={40}
                   className="h-full w-full object-cover"
                 />
               </div>
-              <span className="text-base font-bold tracking-tight text-[var(--color-text)] sm:text-lg">
-                CodeWithMiguel
-              </span>
             </Link>
 
             <div className="ml-auto flex items-center gap-3">
@@ -350,6 +347,7 @@ export default function Home() {
                       <Link
                           href="/anfrage"
                           key={topic.title}
+                          data-scroll-border
                           className="card-shell group block rounded-2xl p-6"
                       >
                         <div
@@ -471,6 +469,120 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </section>
+
+        <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
+          <Link
+              href="/codekultur"
+              data-scroll-border
+              className="card-shell group relative block overflow-hidden rounded-[2rem]"
+          >
+            <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
+              {/* Text */}
+              <div className="relative z-10 p-7 sm:p-10 lg:p-12">
+                <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-xs font-semibold">
+                  <Brain className="size-4 text-[var(--color-accent-pink)]" />
+                  Mehr als nur Code
+                </div>
+
+                <h2 className="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+                  Gute Entwickler schreiben nicht nur
+                  <span className="block bg-gradient-to-r from-[#180161] via-[#eb3678] to-[#fb773c] bg-clip-text text-transparent">
+            guten Code.
+          </span>
+                </h2>
+
+                <p className="mt-5 max-w-2xl text-base leading-7 text-[var(--color-text-soft)]">
+                  Clean Code, SOLID und technische Skills sind wichtig.
+                  Aber gute Projekte entstehen erst durch klare Kommunikation,
+                  Verantwortung und die Fähigkeit, auch mal bewusst Ja oder Nein
+                  zu sagen.
+                </p>
+
+                <div className="mt-7 flex flex-wrap gap-2">
+                  {[
+                    "Clean Code",
+                    "SOLID",
+                    "Kommunikation",
+                    "Mentalität",
+                  ].map((item) => (
+                      <span
+                          key={item}
+                          className="rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-xs font-medium"
+                      >
+              {item}
+            </span>
+                  ))}
+                </div>
+
+                <div className="mt-8 inline-flex items-center gap-2 font-semibold">
+                  Meine Sicht auf gute Zusammenarbeit
+
+                  <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-2" />
+                </div>
+              </div>
+
+              {/* Visual */}
+              <div className="relative min-h-[280px] overflow-hidden bg-[#021526] p-8 lg:min-h-full">
+                <div className="pointer-events-none absolute -right-16 -top-16 size-52 rounded-full bg-[#eb3678]/20 blur-3xl" />
+                <div className="pointer-events-none absolute -bottom-16 left-10 size-52 rounded-full bg-[#fb773c]/20 blur-3xl" />
+
+                <div className="relative flex h-full flex-col justify-center">
+                  <div className="mb-6 font-mono text-xs uppercase tracking-[0.25em] text-white/40">
+                    developer.ts
+                  </div>
+
+                  <div className="space-y-3 font-mono text-sm leading-7 sm:text-base">
+                    <div>
+                      <span className="text-[#eb3678]">const</span>{" "}
+                      <span className="text-white">developer</span>{" "}
+                      <span className="text-white/40">=</span>{" "}
+                      <span className="text-[#fb773c]">{"{"}</span>
+                    </div>
+
+                    <div className="pl-5 text-white/70">
+                      skill: <span className="text-white">true</span>,
+                    </div>
+
+                    <div className="pl-5 text-white/70">
+                      communication:{" "}
+                      <span className="text-white">true</span>,
+                    </div>
+
+                    <div className="pl-5 text-white/70">
+                      responsibility:{" "}
+                      <span className="text-white">true</span>,
+                    </div>
+
+                    <div className="pl-5 text-white/70">
+                      ego:{" "}
+                      <span className="text-white/40">
+                undefined
+              </span>,
+                    </div>
+
+                    <div className="text-[#fb773c]">
+                      {"};"}
+                    </div>
+                  </div>
+
+                  <div className="mt-8 flex gap-3">
+                    <div className="grid size-11 place-items-center rounded-xl border border-white/10 bg-white/5">
+                      <Code2 className="size-5 text-[#fb773c]" />
+                    </div>
+
+                    <div className="grid size-11 place-items-center rounded-xl border border-white/10 bg-white/5">
+                      <MessageSquare className="size-5 text-[#eb3678]" />
+                    </div>
+
+                    <div className="flex items-center text-sm text-white/50">
+                      Code is a team sport.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Link>
         </section>
 
         {/* CTA */}

@@ -1,5 +1,5 @@
 import "./globals.css";
-
+import { ScrollBorderController } from "@/components/scroll-border-controller";
 export const metadata = {
     title: "Informatik Nachhilfe",
     description: "Individuelle Informatik-Nachhilfe",
@@ -34,8 +34,10 @@ export default function RootLayout({
                 }}
             />
         </head>
-
-        <body>{children}</body>
+        <body>
+        <ScrollBorderController />
+        {children}
+        </body>
         </html>
     );
 }
