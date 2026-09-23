@@ -5,8 +5,8 @@ import type {
     LandingPreviewRequest,
     LandingPreviewResponse,
 } from "@/types/landing-preview";
-import { GeneratedLandingPreview } from "@/app/landing-page-vorschau/page";
 import {AiImagePreview} from "@/components/ai-image-preview";
+import {GeneratedLandingPreview} from "@/components/GeneratedLandingPreview";
 
 const fieldControlClass =
     "w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-4 py-3 text-sm text-[var(--color-text)] placeholder:text-[var(--color-text-soft)] outline-none transition focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/10";
