@@ -3,17 +3,20 @@ import Link from "next/link";
 import {
   ArrowRight,
   BookOpen,
-  Braces, Brain,
+  Brain,
+  Braces,
   Code2,
   Database,
   GitBranch,
   Globe2,
-  GraduationCap, MessageSquare,
-  Network, ScanLine,
+  GraduationCap,
+  MessageSquare,
+  Network,
+  ScanLine,
   Terminal,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
-
+import {LandingPreviewForm} from "@/components/landingpage-preview-form";
 
 const topics = [
   {
@@ -89,16 +92,16 @@ const steps = [
 
 export default function Home() {
   return (
-      <main className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)]">
+      <main className="min-h-screen bg-(--color-bg) text-(--color-text)">
         {/* Navigation */}
         <header className="border-b border-[var(--color-border)] bg-[var(--color-bg)]/90 backdrop-blur">
           {/* obere Zeile */}
-          <div className="flex w-full items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-10">
+          <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6 lg:px-8">
             <Link
                 href="/"
                 className="flex shrink-0 items-center gap-3 font-semibold"
             >
-              <div className="flex size-12 items-center justify-center overflow-hidden rounded-lg sm:size-16">
+              <div className="flex size-10 items-center justify-center overflow-hidden rounded-lg sm:size-12">
                 <Image
                     src="/favicon.ico"
                     alt="CodeWithMiguel Logo"
@@ -133,27 +136,27 @@ export default function Home() {
                 </Link>
 
                 <Link
-                    href="/web-projects"
+                    href="#webprojekt-generator"
                     className="inline-flex items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-5 py-3 text-sm font-medium text-[var(--color-text)] transition hover:-translate-y-0.5"
                 >
-                  Hilfe beim Webprojekt
+                  Webprojekt-Vorschau
                 </Link>
               </div>
             </div>
           </div>
 
           {/* Mobile Navigation */}
-          <div className="grid gap-2 px-4 pb-4 sm:px-6 md:hidden">
+          <div className="grid grid-cols-2 gap-2 px-4 pb-3 sm:px-6 md:hidden">
             <Link
                 href="/anfrage"
-                className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[var(--color-accent-orange)] px-4 py-3 text-center text-sm font-semibold text-white"
+                className="inline-flex min-h-11 items-center justify-center rounded-xl bg-[var(--color-accent-orange)] px-3 py-2.5 text-center text-xs font-semibold text-white sm:text-sm"
             >
               Informatik-Nachhilfe
             </Link>
 
             <Link
                 href="/kurse"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[var(--color-accent-pink)]/30 bg-[var(--color-accent-pink)]/5 px-4 py-3 text-center text-sm font-semibold text-[var(--color-text)]"
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[var(--color-accent-pink)]/30 bg-[var(--color-accent-pink)]/5 px-3 py-2.5 text-center text-xs font-semibold text-[var(--color-text)] sm:text-sm"
             >
               Kurse
 
@@ -163,10 +166,10 @@ export default function Home() {
             </Link>
 
             <Link
-                href="/web-projects"
-                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-4 py-3 text-center text-sm font-semibold text-[var(--color-text)]"
+                href="#webprojekt-generator"
+                className="col-span-2 inline-flex min-h-11 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-4 py-2.5 text-center text-sm font-semibold text-[var(--color-text)]"
             >
-              Hilfe beim Webprojekt
+              Webprojekt-Vorschau
             </Link>
           </div>
         </header>
@@ -174,9 +177,9 @@ export default function Home() {
         {/* CodeCheck direkt unter dem Header */}
         <Link
             href="/codecheck"
-            className="group mx-auto mt-4 block max-w-5xl px-4 sm:px-6 lg:px-8"
+            className="group mx-auto mt-3 block max-w-5xl px-4 sm:px-6 lg:px-8"
         >
-          <div className="codecheck-teaser relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-4 py-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:px-6">
+          <div className="codecheck-teaser relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-4 py-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:px-6">
             {/* Scan Animation */}
             <div className="codecheck-teaser-scan pointer-events-none absolute inset-y-0 w-24 opacity-40" />
 
@@ -217,29 +220,44 @@ export default function Home() {
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(235,54,120,0.12),transparent_35%)]" />
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_left,rgba(251,119,60,0.10),transparent_30%)]" />
 
-          <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-32">
+          <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-20">
             <div>
-              <div className="section-badge mb-6">
+              <div className="section-badge mb-4">
                 <span className="size-2 rounded-full bg-[var(--color-accent-orange)]" />
-                Individuelle Informatik-Nachhilfe
+                Informatik lernen. Software entwickeln.
               </div>
 
-              <h1 className="max-w-4xl text-5xl font-semibold tracking-tight text-[var(--color-text)] sm:text-6xl lg:text-7xl">                Informatik verstehen.
+              <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-[var(--color-text)] sm:text-5xl lg:text-6xl">
+                Echtes Wissen statt
                 <span className="block text-[var(--color-primary)]">
-                Spaß daran finden.
-              </span>
+                  Baukasten-Denken.
+                </span>
               </h1>
 
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--color-text-soft)]">
-                Persönliche Informatik-Nachhilfe für Schüler, Auszubildende und
-                Studierende. Nicht nur für bessere Noten — sondern damit du
-                verstehst, wie spannend Informatik wirklich sein kann.
+              <p className="mt-5 max-w-2xl text-base leading-7 text-[var(--color-text-soft)] sm:text-lg sm:leading-8">
+                Du lernst nicht nur, wie etwas funktioniert, sondern warum. Wir entwickeln selbst, arbeiten mit echter Versionsverwaltung und wenden das Gelernte direkt in Code und Projekten an.
               </p>
 
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-6 grid gap-2 text-sm text-[var(--color-text-soft)] sm:grid-cols-3">
+                {[
+                  ["01", "Selbst entwickeln"],
+                  ["02", "Git wirklich nutzen"],
+                  ["03", "Wissen anwenden"],
+                ].map(([number, label]) => (
+                    <div
+                        key={label}
+                        className="flex items-center gap-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-3 py-3"
+                    >
+                      <span className="font-mono text-xs text-[var(--color-accent-pink)]">{number}</span>
+                      <span className="font-medium text-[var(--color-text)]">{label}</span>
+                    </div>
+                ))}
+              </div>
+
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <Link
                     href="/anfrage"
-                    className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-[var(--color-primary)] px-6 text-sm font-medium text-white transition hover:bg-[var(--color-base-dark)]"
+                    className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[var(--color-primary)] px-5 text-sm font-medium text-white transition hover:bg-[var(--color-base-dark)]"
                 >
                   Lernanfrage erstellen
                   <ArrowRight className="size-4" />
@@ -247,25 +265,10 @@ export default function Home() {
 
                 <Link
                     href="#ueber-mich"
-                    className="inline-flex h-12 items-center justify-center rounded-xl border border-[var(--color-border)] bg-white px-6 text-sm font-medium text-[var(--color-primary)] transition hover:border-[var(--color-primary)] hover:bg-[#faf8ff]"
+                    className="inline-flex h-11 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-5 text-sm font-medium text-[var(--color-text)] transition hover:border-[var(--color-primary)]"
                 >
-                  Mehr über mich
+                  Wie ich unterrichte
                 </Link>
-              </div>
-
-              <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-sm text-[var(--color-text-soft)]">
-              <span className="flex items-center gap-2">
-                <span className="text-[var(--color-accent-pink)]">✓</span>
-                Online-Nachhilfe
-              </span>
-                <span className="flex items-center gap-2">
-                <span className="text-[var(--color-accent-pink)]">✓</span>
-                Individuelle Themen
-              </span>
-                <span className="flex items-center gap-2">
-                <span className="text-[var(--color-accent-pink)]">✓</span>
-                Praxisorientiert
-              </span>
               </div>
             </div>
 
@@ -278,7 +281,7 @@ export default function Home() {
                   <div className="size-2.5 rounded-full bg-[#ff6b6b]" />
                   <div className="size-2.5 rounded-full bg-[#ffd93d]" />
                   <div className="size-2.5 rounded-full bg-[#6bcb77]" />
-                  <span className="ml-3 text-xs text-zinc-500">learning.ts</span>
+                  <span className="ml-3 text-xs text-zinc-500">developer.ts</span>
                 </div>
 
                 <div className="overflow-x-auto p-6 text-sm leading-7 sm:p-8">
@@ -293,7 +296,7 @@ export default function Home() {
                     <span className="text-[#9ad0ff]">topic</span>
                     <span className="text-white">:</span>{" "}
                     <span className="text-[var(--color-accent-orange)]">
-                    &quot;Informatik&quot;
+                    &quot;echtes Verständnis&quot;
                   </span>
                     <span className="text-white">,</span>
                   </div>
@@ -302,7 +305,7 @@ export default function Home() {
                     <span className="text-[#9ad0ff]">goal</span>
                     <span className="text-white">:</span>{" "}
                     <span className="text-[var(--color-accent-orange)]">
-                    &quot;verstehen & Spaß finden&quot;
+                    &quot;selbst entwickeln&quot;
                   </span>
                     <span className="text-white">,</span>
                   </div>
@@ -314,25 +317,25 @@ export default function Home() {
                   </div>
 
                   <div className="pl-12 text-[#d9b8ff]">
-                    &quot;verständlich erklären&quot;,
+                    &quot;Wissen aufbauen&quot;,
                   </div>
                   <div className="pl-12 text-[#d9b8ff]">
-                    &quot;gemeinsam üben&quot;,
+                    &quot;Git & Versionsverwaltung nutzen&quot;,
                   </div>
                   <div className="pl-12 text-[#d9b8ff]">
-                    &quot;Interesse für Informatik wecken&quot;
+                    &quot;Gelerntes praktisch anwenden&quot;
                   </div>
 
                   <div className="pl-6 text-white">]</div>
                   <div className="text-white">{"};"}</div>
 
                   <div className="mt-7 text-zinc-500">
-                    {"// Lernen beginnt mit Motivation."}
+                    {"// Nicht klicken. Verstehen."}
                   </div>
 
                   <div className="mt-1">
                     <span className="text-[var(--color-accent-pink)]">return</span>{" "}
-                    <span className="text-[#9ad0ff]">confidence</span>
+                    <span className="text-[#9ad0ff]">knowledge</span>
                     <span className="text-white">;</span>
                   </div>
                 </div>
@@ -342,24 +345,23 @@ export default function Home() {
         </section>
 
         {/* Themen */}
-        <section id="themen" className="bg-[var(--color-surface)] py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <section id="themen" className="bg-[var(--color-surface)] py-14 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl">
               <p className="mb-3 text-sm font-medium uppercase tracking-[0.18em] text-[var(--color-accent-pink)]">
                 Themenbereiche
               </p>
 
               <h2 className="text-3xl font-semibold tracking-tight text-[var(--color-text)] sm:text-4xl">
-                Was möchtest du verstehen?
+                Was möchtest du wirklich verstehen?
               </h2>
 
               <p className="mt-4 text-lg leading-8 text-[var(--color-text-soft)]">
-                Wähle einen Bereich aus und stelle anschließend genau die Themen
-                zusammen, bei denen du Unterstützung brauchst.
+                Wähle einen Bereich aus. Wir arbeiten an den Grundlagen, schreiben selbst Code und übertragen das Wissen auf echte Aufgaben.
               </p>
             </div>
 
-            <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {topics.map((topic) => {
                 const Icon = topic.icon;
 
@@ -427,19 +429,19 @@ export default function Home() {
         </section>
 
         {/* Über mich */}
-        <section id="ueber-mich" className="py-24">
-          <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-2 lg:px-8">
+        <section id="ueber-mich" className="py-14 sm:py-16 lg:py-20">
+          <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
             <div>
-              <div className="flex size-12 items-center justify-center rounded-xl bg-[var(--color-primary)] text-white">
+              <div className="flex size-12 items-center justify-center rounded-xl bg-(--color-primary) text-white">
                 <GraduationCap className="size-5" />
               </div>
 
-              <h2 className="mt-6 text-3xl font-semibold tracking-tight sm:text-4xl text-[var(--color-base-dark)]">
-                Ich war selbst schlecht in Informatik.
+              <h2 className="text-3xl font-semibold tracking-tight text-[var(--color-text)] sm:text-4xl">
+                Ich kenne den Unterschied zwischen auswendig lernen und verstehen.
               </h2>
             </div>
 
-            <div className="space-y-5 text-lg leading-8 text-[var(--color-text-soft)]">
+            <div className="space-y-4 text-base sm:text-lg leading-8 text-[var(--color-text-soft)]">
               <p>
                 In der Schule hat mir Informatik lange keinen Spaß gemacht, weil
                 mir der Reiz daran gefehlt hat.
@@ -452,17 +454,15 @@ export default function Home() {
               </p>
 
               <p>
-                Mir geht es nicht nur darum, deine Noten zu verbessern. Ich möchte
-                dir zeigen, warum Informatik spannend ist — und dass du dabei
-                wirklich Spaß haben kannst.
+                Mir geht es nicht darum, dir eine fertige Lösung hinzustellen. Du sollst verstehen, selbst entwickeln, sauber versionieren und das Gelernte auf neue Probleme übertragen können.
               </p>
             </div>
           </div>
         </section>
 
         {/* Ablauf */}
-        <section id="ablauf" className="bg-[var(--color-base-dark)] py-24 text-white">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <section id="ablauf" className="bg-[var(--color-base-dark)] py-14 sm:py-16 lg:py-20 text-white">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl">
               <div className="mb-4 flex items-center gap-2 text-sm text-white/60">
                 <BookOpen className="size-4 text-[var(--color-accent-orange)]" />
@@ -474,7 +474,7 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               {steps.map((step) => (
                   <div
                       key={step.number}
@@ -495,7 +495,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
+        <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
           <Link
               href="/codekultur"
               data-scroll-border
@@ -503,32 +503,29 @@ export default function Home() {
           >
             <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
               {/* Text */}
-              <div className="relative z-10 p-7 sm:p-10 lg:p-12">
+              <div className="relative z-10 p-6 sm:p-8 lg:p-10">
                 <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-xs font-semibold">
                   <Brain className="size-4 text-[var(--color-accent-pink)]" />
-                  Mehr als nur Code
+                  Entwickeln statt zusammenklicken
                 </div>
 
                 <h2 className="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-                  Gute Entwickler schreiben nicht nur
+                  Gutes Entwickeln beginnt mit
                   <span className="block bg-gradient-to-r from-[#180161] via-[#eb3678] to-[#fb773c] bg-clip-text text-transparent">
-            guten Code.
+            echtem Verständnis.
           </span>
                 </h2>
 
                 <p className="mt-5 max-w-2xl text-base leading-7 text-[var(--color-text-soft)]">
-                  Clean Code, SOLID und technische Skills sind wichtig.
-                  Aber gute Projekte entstehen erst durch klare Kommunikation,
-                  Verantwortung und die Fähigkeit, auch mal bewusst Ja oder Nein
-                  zu sagen.
+                  Kein Baukasten ersetzt Grundlagen. Deshalb gehören sauberer Code, Git, nachvollziehbare Entscheidungen und eigenständiges Problemlösen für mich zusammen.
                 </p>
 
                 <div className="mt-7 flex flex-wrap gap-2">
                   {[
+                    "Grundlagen",
+                    "Git",
                     "Clean Code",
-                    "SOLID",
-                    "Kommunikation",
-                    "Mentalität",
+                    "Problemlösen",
                   ].map((item) => (
                       <span
                           key={item}
@@ -539,8 +536,8 @@ export default function Home() {
                   ))}
                 </div>
 
-                <div className="mt-8 inline-flex items-center gap-2 font-semibold">
-                  Meine Sicht auf gute Zusammenarbeit
+                <div className="mt-6 inline-flex items-center gap-2 font-semibold">
+                  Meine Sicht auf echtes Entwickeln
 
                   <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-2" />
                 </div>
@@ -552,7 +549,7 @@ export default function Home() {
                 <div className="pointer-events-none absolute -bottom-16 left-10 size-52 rounded-full bg-[#fb773c]/20 blur-3xl" />
 
                 <div className="relative flex h-full flex-col justify-center">
-                  <div className="mb-6 font-mono text-xs uppercase tracking-[0.25em] text-white/40">
+                  <div className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-white/40">
                     developer.ts
                   </div>
 
@@ -600,7 +597,7 @@ export default function Home() {
                     </div>
 
                     <div className="flex items-center text-sm text-white/50">
-                      Code is a team sport.
+                      Understand it. Build it. Version it.
                     </div>
                   </div>
                 </div>
@@ -609,10 +606,89 @@ export default function Home() {
           </Link>
         </section>
 
+
+        {/* Webprojekt Generator */}
+        <section
+            id="webprojekt-generator"
+            className="relative overflow-hidden border-y border-[var(--color-border)] bg-[var(--color-surface)] py-14 sm:py-16 lg:py-20"
+        >
+          <div className="pointer-events-none absolute -right-40 top-0 size-96 rounded-full bg-[rgba(235,54,120,0.08)] blur-3xl" />
+          <div className="pointer-events-none absolute -left-40 bottom-0 size-96 rounded-full bg-[rgba(251,119,60,0.08)] blur-3xl" />
+
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+              <div className="max-w-2xl">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-surface-strong)] px-3 py-1.5 text-xs font-semibold text-[var(--color-text)]">
+                  <Globe2 className="size-4 text-[var(--color-accent-pink)]" />
+                  Webprojekt-Vorschau
+                </div>
+
+                <h2 className="text-3xl font-semibold tracking-tight text-[var(--color-text)] sm:text-4xl lg:text-5xl">
+                  Aus ein paar Stichpunkten wird
+                  <span className="block text-[var(--color-primary)]">
+                    eine erste Designrichtung.
+                  </span>
+                </h2>
+
+                <p className="mt-4 max-w-xl text-base leading-7 text-[var(--color-text-soft)] sm:text-lg sm:leading-8">
+                  Beschreibe dein Unternehmen, dein Ziel und den gewünschten Stil.
+                  Der Generator erstellt daraus eine erste visuelle Vorstellung für
+                  dein mögliches Webprojekt.
+                </p>
+              </div>
+
+              <div className="grid gap-2 sm:grid-cols-3">
+                {[
+                  ["01", "Idee beschreiben"],
+                  ["02", "Vorschau erzeugen"],
+                  ["03", "Individuell entwickeln"],
+                ].map(([number, label]) => (
+                    <div
+                        key={label}
+                        className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] p-4"
+                    >
+                      <div className="font-mono text-xs text-[var(--color-accent-pink)]">
+                        {number}
+                      </div>
+                      <div className="mt-2 text-sm font-semibold text-[var(--color-text)]">
+                        {label}
+                      </div>
+                    </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-8 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-bg)] p-3 shadow-[0_24px_80px_rgba(2,21,38,0.08)] sm:p-5 lg:mt-10 lg:p-6">
+              <LandingPreviewForm />
+            </div>
+
+            <div className="mt-6 flex flex-col gap-4 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-strong)] p-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="max-w-2xl">
+                <p className="text-sm font-semibold text-[var(--color-text)]">
+                  Die KI liefert die Richtung. Die Website wird richtig entwickelt.
+                </p>
+                <p className="mt-1 text-sm leading-6 text-[var(--color-text-soft)]">
+                  Die Vorschau ist kein fertiger Baukasten-Export. Struktur,
+                  Responsive Design, Komponenten, Code und Versionsverwaltung
+                  entstehen bei der Umsetzung individuell für dein Projekt.
+                </p>
+              </div>
+
+              <Link
+                  href="/web-projects"
+                  className="inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-[var(--color-primary)] px-5 text-sm font-semibold text-white transition hover:bg-[var(--color-base-dark)]"
+              >
+                Webprojekt besprechen
+                <ArrowRight className="size-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
-        <section className="py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="relative overflow-hidden rounded-3xl bg-[var(--color-primary)] px-6 py-16 text-center text-white sm:px-12">
+        <section className="py-14 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="relative overflow-hidden rounded-3xl bg-[var(--color-primary)] px-5 py-12 text-center text-white sm:px-12">
               <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-[rgba(251,119,60,0.30)] blur-3xl" />
               <div className="absolute left-0 bottom-0 h-40 w-40 rounded-full bg-[rgba(235,54,120,0.25)] blur-3xl" />
 
@@ -622,17 +698,16 @@ export default function Home() {
                 </p>
 
                 <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-                  Stell deine individuelle Lernanfrage zusammen.
+                  Lern nicht nur für die nächste Aufgabe.
                 </h2>
 
                 <p className="mx-auto mt-4 max-w-xl leading-7 text-white/75">
-                  Wähle deine Themen aus und beschreibe kurz, wobei du
-                  Unterstützung brauchst.
+                  Baue Wissen auf, das du beim nächsten Projekt selbst wieder einsetzen kannst.
                 </p>
 
                 <Link
                     href="/anfrage"
-                    className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-[var(--color-accent-orange)] px-6 text-sm font-medium text-white transition hover:bg-[var(--color-accent-pink)]"
+                    className="mt-6 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-[var(--color-accent-orange)] px-6 text-sm font-medium text-white transition hover:bg-[var(--color-accent-pink)]"
                 >
                   Lernanfrage starten
                   <ArrowRight className="size-4" />
