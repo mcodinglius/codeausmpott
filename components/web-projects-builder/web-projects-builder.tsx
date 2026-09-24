@@ -160,14 +160,13 @@ export function WebProjectRequestBuilder() {
             description: String(formData.get("description") ?? "").trim(),
             goal: String(formData.get("goal") ?? "").trim(),
             topics: selectedTopics.map((topic) => topic.name),
-            website: String(formData.get("website") ?? ""),
         };
 
         setStatus("sending");
         setMessage("");
 
         try {
-            const response = await fetch("/api/anfrage", {
+            const response = await fetch("/api/webprojekt", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -177,9 +176,10 @@ export function WebProjectRequestBuilder() {
 
             const result = await response.json().catch(() => null);
 
-            if (!response.ok) {
+            if (!response.ok || !result?.success || !result?.id) {
                 throw new Error(
-                    result?.error ?? "Die Projektanfrage konnte nicht gesendet werden.",
+                    result?.error ??
+                        "Die Projektanfrage wurde nicht als E-Mail bestätigt.",
                 );
             }
 
@@ -217,18 +217,6 @@ export function WebProjectRequestBuilder() {
             }}
         >
             <form onSubmit={handleSubmit} className="space-y-14">
-                {/* Honeypot */}
-                <div className="absolute -left-[9999px]" aria-hidden="true">
-                    <label htmlFor="website">Website</label>
-                    <input
-                        id="website"
-                        name="website"
-                        type="text"
-                        tabIndex={-1}
-                        autoComplete="off"
-                    />
-                </div>
-
                 {/* 01 Probleme */}
                 <section>
                     <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--color-accent-pink)]">
@@ -512,8 +500,8 @@ function DraggableTopic({
         <div
             ref={ref}
             className={`gradient-border flex items-center gap-3 rounded-xl p-3 ${
-                isDragging ? "opacity-30" : ""
-            } ${selected ? "opacity-50" : ""}`}
+    isDragging ? "opacity-30" : ""
+} ${selected ? "opacity-50" : ""}`}
         >
             <button
                 ref={handleRef}
@@ -588,25 +576,25 @@ function ProjectBrainDropZone({
                     borderRadius: "47% 53% 46% 54% / 51% 47% 53% 49%",
                 }}
                 className={`gradient-border relative flex min-h-[420px] items-center justify-center overflow-hidden p-8 transition-all duration-300 sm:p-10 ${
-                    isDropTarget
-                        ? "scale-[1.02] shadow-[0_0_60px_rgba(235,54,120,0.18)] ring-4 ring-[rgba(235,54,120,0.18)]"
-                        : ""
-                }`}
+    isDropTarget
+        ? "scale-[1.02] shadow-[0_0_60px_rgba(235,54,120,0.18)] ring-4 ring-[rgba(235,54,120,0.18)]"
+        : ""
+}`}
             >
                 <div
                     className={`pointer-events-none absolute inset-10 rounded-[inherit] blur-3xl transition-opacity duration-300 ${
-                        isDropTarget
-                            ? "bg-[rgba(235,54,120,0.16)] opacity-100"
-                            : "opacity-0"
-                    }`}
+    isDropTarget
+        ? "bg-[rgba(235,54,120,0.16)] opacity-100"
+        : "opacity-0"
+}`}
                 />
 
                 <BrainCircuit
                     className={`pointer-events-none absolute left-1/2 top-1/2 size-[280px] -translate-x-1/2 -translate-y-1/2 transition duration-300 ${
-                        isDropTarget
-                            ? "scale-110 text-[var(--color-accent-pink)] opacity-20"
-                            : "text-[var(--color-primary)] opacity-[0.08]"
-                    }`}
+    isDropTarget
+        ? "scale-110 text-[var(--color-accent-pink)] opacity-20"
+        : "text-[var(--color-primary)] opacity-[0.08]"
+}`}
                     strokeWidth={1}
                 />
 
@@ -615,10 +603,10 @@ function ProjectBrainDropZone({
                         <div className="mx-auto max-w-xs text-center">
                             <div
                                 className={`mx-auto flex size-20 items-center justify-center rounded-full transition ${
-                                    isDropTarget
-                                        ? "scale-110 bg-[rgba(235,54,120,0.15)] text-[var(--color-accent-pink)]"
-                                        : "bg-[var(--color-surface)] text-[var(--color-primary)]"
-                                }`}
+    isDropTarget
+        ? "scale-110 bg-[rgba(235,54,120,0.15)] text-[var(--color-accent-pink)]"
+        : "bg-[var(--color-surface)] text-[var(--color-primary)]"
+}`}
                             >
                                 <BrainCircuit className="size-10" />
                             </div>
