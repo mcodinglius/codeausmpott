@@ -90,7 +90,7 @@ export default function ImpressumPage() {
     <div>
         <div className="font-medium">Anbieter</div>
         <div className="mt-1 text-white/60">
-        [Vollständiger Vor- und Nachname]
+        Miguel Rodriguez Baena
         </div>
         </div>
         </div>
@@ -100,9 +100,9 @@ export default function ImpressumPage() {
     <div>
         <div className="font-medium">Anschrift</div>
         <div className="mt-1 text-white/60">
-        [Straße und Hausnummer]
+        schmelzerstr. 2
         <br />
-        [PLZ Ort]
+        45881 Gelsenkirchen
         <br />
         Deutschland
         </div>
@@ -114,7 +114,7 @@ export default function ImpressumPage() {
     <div>
         <div className="font-medium">E-Mail</div>
         <div className="mt-1 text-white/60">
-        [deine@email.de]
+        miguelrodriguezbaena@icloud.com
         </div>
         </div>
         </div>
@@ -133,12 +133,12 @@ export default function ImpressumPage() {
 
         <div className="mt-5 leading-7 text-[var(--color-text-soft)]">
     <p className="font-medium text-[var(--color-text)]">
-        [Vollständiger Vor- und Nachname]
+        Miguel Rodriguez Baena
         </p>
         <p>
-        [Straße und Hausnummer]
+       schmelzerstr. 2
         <br />
-        [PLZ Ort]
+        45881 Gelsenkirchen
         <br />
         Deutschland
         </p>
@@ -152,10 +152,10 @@ export default function ImpressumPage() {
         <p>
             E-Mail:{" "}
     <a
-        href="mailto:DEINE_EMAIL"
+        href="mailto:miguelrodriguezbaena@icloud.com"
     className="font-medium text-[var(--color-text)] underline decoration-[var(--color-accent-orange)] underline-offset-4"
         >
-        [deine@email.de]
+        miguelrodriguezbaena@icloud.com
         </a>
         </p>
 
@@ -169,34 +169,6 @@ export default function ImpressumPage() {
     </section>
 
     <section className="border-t border-[var(--color-border)] pt-8">
-    <h2 className="text-xl font-bold">
-        Steuerliche Identifikationsnummern
-    </h2>
-
-    <div className="mt-4 space-y-3 leading-7 text-[var(--color-text-soft)]">
-        <p>
-            Umsatzsteuer-Identifikationsnummer gemäß § 27a
-    Umsatzsteuergesetz:
-        <br />
-        <span className="font-medium text-[var(--color-text)]">
-            [DE123456789]
-            </span>
-            </p>
-
-            <p>
-            Wirtschafts-Identifikationsnummer:
-    <br />
-    <span className="font-medium text-[var(--color-text)]">
-        [optional: DE...]
-    </span>
-    </p>
-    </div>
-
-    <p className="mt-3 text-sm leading-6 text-[var(--color-text-soft)]">
-        Nur die Nummern angeben, die dir tatsächlich erteilt wurden.
-        Die persönliche Steuer-ID bzw. normale Steuernummer gehört
-    nicht in dieses öffentliche Impressum.
-    </p>
     </section>
 
     <section className="border-t border-[var(--color-border)] pt-8">
@@ -222,11 +194,11 @@ export default function ImpressumPage() {
         </p>
 
         <p className="mt-3">
-        [Vollständiger Vor- und Nachname]
+        Miguel Rodriguez Baena
         <br />
-        [Straße und Hausnummer]
+        Schmelzerstr. 2
         <br />
-        [PLZ Ort]
+        45881 Gelsenkirchen
         </p>
         </section>
 
