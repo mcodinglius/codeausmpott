@@ -162,7 +162,7 @@ export default function ImpressumPage() {
         <p>
         Telefon:{" "}
     <span className="text-[var(--color-text)]">
-        [optional: Telefonnummer]
+        017621658516
     </span>
     </p>
     </div>
