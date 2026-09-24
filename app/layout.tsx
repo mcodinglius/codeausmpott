@@ -1,5 +1,6 @@
 import "./globals.css";
 import { ScrollBorderController } from "@/components/scroll-border-controller";
+import { Analytics } from "@vercel/analytics/next"
 export const metadata = {
     title: "Informatik Nachhilfe",
     description: "Individuelle Informatik-Nachhilfe",
@@ -9,13 +10,13 @@ const themeScript = `
 (function () {
   try {
     const stored = localStorage.getItem("theme");
-    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    if (stored === "dark" || (!stored && systemDark)) {
-      document.documentElement.classList.add("dark");
-    } else {
+    if (stored === "light") {
       document.documentElement.classList.remove("dark");
+      return;
     }
+
+    document.documentElement.classList.add("dark");
   } catch (_) {}
 })();
 `;
@@ -37,6 +38,7 @@ export default function RootLayout({
         <body>
         <ScrollBorderController />
         {children}
+        <Analytics />
         </body>
         </html>
     );

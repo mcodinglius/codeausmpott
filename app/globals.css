@@ -7,11 +7,27 @@
 }
 
 :root {
-  --color-primary: #180161;
+  --color-primary: #9a84ff;
   --color-base-dark: #021526;
 
   --color-accent-pink: #eb3678;
   --color-accent-orange: #fb773c;
+
+  --color-bg: #021526;
+  --color-surface: #071d30;
+  --color-surface-strong: #0b2438;
+
+  --color-border: #17364c;
+
+  --color-text: #f8fafc;
+  --color-text-soft: #a9b7c3;
+
+  --card-background: var(--color-surface-strong);
+}
+
+html:not(.dark) {
+  --color-primary: #180161;
+  --color-base-dark: #021526;
 
   --color-bg: #ffffff;
   --color-surface: #f8f8fb;
@@ -27,6 +43,7 @@
 
 .dark {
   --color-primary: #9a84ff;
+  --color-base-dark: #021526;
 
   --color-bg: #021526;
   --color-surface: #071d30;

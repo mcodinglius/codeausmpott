@@ -177,7 +177,6 @@ export default function WebprojektePage() {
                 <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 py-8 text-sm text-[var(--color-text-soft)] sm:flex-row sm:items-center sm:justify-between lg:px-8">
                     <div className="flex items-center gap-2 text-[var(--color-text)]">
                         <Terminal className="size-4 text-[var(--color-primary)]" />
-                        CodeWithMiguel
                     </div>
 
                     <div className="flex gap-6">
